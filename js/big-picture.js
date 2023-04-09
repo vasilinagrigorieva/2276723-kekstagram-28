@@ -44,19 +44,6 @@ const renderComments = () => {
   commentCount.innerHTML = `${commentsShown} из <span class ="comments-count">${comments.length}</span>`;
 };
 
-const hideBigPicture = () => {
-  bigPicture.classList.add('hidden');
-  body.classList.remove('modal-open');
-  document.removeEventListener('keydown', onDocumentKeydown);
-  commentsShown = 0;
-};
-
-function onDocumentKeydown(evt){
-  if (evt.key === 'Escape') {
-    evt.preventDefault();
-    hideBigPicture();
-  }
-}
 
 const onCancelButtonClick = () => {
   hideBigPicture();
